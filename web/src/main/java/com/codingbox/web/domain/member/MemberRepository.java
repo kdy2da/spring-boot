@@ -34,8 +34,6 @@ public class MemberRepository {
 		}
 		return null;
 	}
-	
-
 }
 
 
