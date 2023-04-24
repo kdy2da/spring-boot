@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+	<link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class='container'>
+		<h1 class='page-header'>HTTP GET</h1>
+		<hr>
+		<p class="lead" >
+			<span th:if="${answer} eq 300">
+				<span th:text="${answer} + '은(는) 정답입니다.'"></span>
+			</span>
+			<span th:unless="${answer} eq 300">
+				<span th:text="${answer} + '은(는) 오답입니다.'"></span>
+			</span>
+		</p>
+	</div>
+</body>
+</html>
