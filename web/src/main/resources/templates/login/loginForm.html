@@ -21,6 +21,7 @@
 		<div class="py-5 text-center">
 			<h2>로그인</h2>
 		</div>
+		<!-- th:action .. /login?redirectURL=requestURI 으로 컨트롤러로 전달 -->
 		<form action="item.html" th:action th:object="${loginForm}" method="post">
 			<div>
 				<label for="loginId">로그인 ID</label> 
@@ -47,8 +48,13 @@
 		</form>
 	</div>
 	<!-- /container -->
+	<script>
+		let message = "[[${msg}]]";
+		if( message != "" && message != null){
+			alert(message);			
+		}
+	</script>
 </body>
-
 </html>
 
 
