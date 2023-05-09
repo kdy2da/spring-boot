@@ -12,7 +12,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity
+//@Entity
 @Getter @Setter
 @Table(name = "MEMBER")
 public class Member {

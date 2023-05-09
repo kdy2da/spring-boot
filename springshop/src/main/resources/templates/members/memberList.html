@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+
+	<div class="container">
+		<div th:replace="fragments/bodyHeader :: bodyHeader" />
+		<div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>이름</th>
+						<th>도시</th>
+						<th>주소</th>
+						<th>우편번호</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="member : ${members}">
+						<th th:text="${member.id}">#</th>
+						<th th:text="${member.name}">이름</th>
+						<th th:text="${member.address?.city}">도시</th>
+						<th th:text="${member.address?.street}">주소</th>
+						<th th:text="${member.address?.zipcode}">우편번호</th>
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+
+		<div th:replace="fragments/footer :: footer" />
+
+	</div>
+	<!-- /container -->
+
+</body>
+</html>

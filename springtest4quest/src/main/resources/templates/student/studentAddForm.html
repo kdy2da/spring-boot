@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link href="../css/bootstrap.min.css" 
+		th:href="@{/css/bootstrap.min.css}"	rel="stylesheet">
+<style>
+.container {
+	max-width: 560px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="py-5 text-center">
+			<h2>학생 등록 폼</h2>
+		</div>
+		<h4 class="mb-3">학생 입력</h4>
+<!-- 		<form action="student.html" th:action method="post"> -->
+		<form action="student.html" th:action method="post" id="addFrm">
+			<div>
+				<label for="studentName">학생명</label> 
+				<input type="text" id="studentName" name="studentName" class="form-control" placeholder="이름을 입력하세요">
+			</div>
+			<div>
+				<label for="age">나이</label> 
+				<input type="text" id="age" name="age" class="form-control" placeholder="나이를 입력하세요">
+			</div>
+			<div>
+				<label for="subject">과목수</label> 
+				<input type="text" id="subject" name="subject" class="form-control" placeholder="과목수를 입력하세요">
+			</div>
+			<div>
+				<label for="phone">전화번호</label> 
+				<input type="text" id="phone" name="phone" class="form-control" placeholder="전화번호를 입력하세요">
+			</div>
+			<div>
+				<label for="addr">주소</label> 
+				<input type="text" id="addr" name="addr" class="form-control" placeholder="주소를 입력하세요">
+			</div>
+			<hr class="my-4">
+			<div class="row">
+				<div class="col">
+<!-- 					<button class="w-100 btn btn-primary btn-lg" type="submit"> -->
+<!-- 						학생등록 -->
+<!-- 					</button> -->
+					<button class="w-100 btn btn-primary btn-lg" type="button" onclick="validation()">
+						학생등록
+					</button>
+				</div>
+				<div class="col">
+					<button class="w-100 btn btn-secondary btn-lg" 
+						onclick="location.href='students.html'" 
+						th:onclick="|location.href='@{/student/students}'|"	type="button">
+						취소
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- /container -->
+	<script th:inline="javascript">
+		function validation(){
+			let frm = document.getElementById('addFrm');
+			
+			let sId = frm.studentName;
+			let sAge = frm.age;
+			let sSubject = frm.subject;
+			let sPhone = frm.phone;
+			let sAddr = frm.addr;
+			
+			
+			if(sId.value == ""){
+				alert("학생 이름을 입력하세요.");
+				return false;
+			}
+			if(sAge.value == ""){
+				alert("학생 나이를 입력하세요.");
+				return false;
+			}
+			if(sSubject.value == ""){
+				alert("과목수를 입력하세요");
+				return false;
+			}
+			if(sPhone.value == ""){
+				alert("휴대전화번호를 입력하세요");
+				return false;
+			}
+			if(sAddr.value == ""){
+				alert("주소를 입력하세요");
+				return false;
+			}
+			
+			frm.submit();
+		}
+		
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
